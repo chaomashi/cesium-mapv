@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.global-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.left-widgets-pane {
+    position: absolute;
+    margin: 5px;
+    z-index: 999;
+}
+
+.widget-li {
+    font-size: 1.7em !important;
+    padding: 11px 14px;
+    cursor: pointer;
+    float: left;
+    margin: 4px 0;
+    color: #b3d0e8;
+    background-color: #27324B;
+}
+
+.map-left-pane {
+    position: absolute;
+    left: 46px;
+    background-color: #ffffff;
+}
+
+.active-widget {
+    padding: 11px 14px;
+    position: relative;
+    color: #ffffff;
+    background-color: #9CB4FC;
+}

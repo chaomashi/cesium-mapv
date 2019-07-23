@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>mapV</title>
+    <link rel="stylesheet" href="./css/map.css"/>
+    <link rel="stylesheet" href="./css/iconfont.css"/>
+    <link rel="stylesheet" href="./tp/Cesium/Widgets/widgets.css"/>
+</head>
+<body>
+
+<nav id="leftWidget" class="left-widgets-pane">
+    <ul class="map-left-menu" data-bind="foreach: {data: mapWidgets, as: 'wid'}">
+        <li class="widget-li"
+            data-bind="css: icon, attr: {title: wid.label, id: wid.id + 'Li'},click: $parent.activeWidget"></li>
+    </ul>
+</nav>
+<div id="globalContainer" class="global-container">
+    <span id="credit"></span>
+</div>
+</body>
+<script type="text/javascript" src="./tp/jquery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./tp/require-plugins/require.js"></script>
+
+<script type="text/javascript" src="./config.js"></script>
+<script type="text/javascript" src="./init.js"></script>
+</html>

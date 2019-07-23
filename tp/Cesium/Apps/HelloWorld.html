@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Hello World!</title>
+  <script src="../Build/Cesium/Cesium.js"></script>
+  <style>
+      @import url(../Build/Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    debugger;
+  var layer = new Cesium.WebMapTileServiceImageryProvider({
+            url: "http://t5.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&&tk=4a00a1dc5387b8ed8adba3374bd87e5e",
+            layer: "tdtVecBasicLayer",
+            style: "default",
+            format: "image/jpeg",
+            tileMatrixSetID: "GoogleMapsCompatible",
+            show: false
+        });
+
+     var viewer = new Cesium.Viewer('cesiumContainer', {
+            imageryProvider: layer,
+            timeline: false,
+            homeButton: true,
+            navigationHelpButton: false
+        });
+
+    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+     url : 'http://localhost:13000/result/tileset.json'
+  }));
+
+    viewer.scene.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(119.5835475, 31.7271912, 1000)
+});
+  </script>
+</body>
+</html>
