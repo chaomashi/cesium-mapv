@@ -7,7 +7,7 @@
 var root = "/" + window.location.pathname.split("/")[1];
 
 require.config({
-    baseUrl: "/global_mapv",
+    baseUrl: "/cesium-mapv",
     waitSeconds: 200,
     optimizeCss: 'standard',
     paths: {
